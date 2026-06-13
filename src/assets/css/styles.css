@@ -1,1 +1,83 @@
 /* Skincare Logger - Global Styles */
+/* Skincare Logger - Global Styles */
+
+:root {
+  --cream: #fdf6f0;
+  --blush: #f2c4ce;
+  --sage: #b7c9b0;
+  --dusty-rose: #d4a5a5;
+  --lavender: #c9b8d8;
+  --text-dark: #3d2c2c;
+  --text-muted: #8a7070;
+  --white: #ffffff;
+  --shadow: 0 2px 12px rgba(61, 44, 44, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--cream);
+  font-family: 'Georgia', serif;
+  color: var(--text-dark);
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2.5rem;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.3rem 0;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--blush);
+}
+
+.nav-link.active {
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--dusty-rose);
+}
+
+/* Pages */
+.main-content {
+  padding: 2.5rem;
+}
+
+.page h1 {
+  font-size: 2rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
