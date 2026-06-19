@@ -15,11 +15,25 @@ export function AppProvider({ children }) {
     setProducts(prev => prev.filter(p => p.id !== id))
   }
 
+  function addToRoutine(timeOfDay, productId) {
+    setRoutine(prev => {
+      if (prev[timeOfDay].includes(productId)) return prev
+      return { ...prev, [timeOfDay]: [...prev[timeOfDay], productId] }
+    })
+  }
+
+  function removeFromRoutine(timeOfDay, productId) {
+    setRoutine(prev => ({
+      ...prev,
+      [timeOfDay]: prev[timeOfDay].filter(id => id !== productId)
+    }))
+  }
+
   return (
     <AppContext.Provider value={{
       products, addProduct, deleteProduct,
       logs, setLogs,
-      routine, setRoutine
+      routine, addToRoutine, removeFromRoutine
     }}>
       {children}
     </AppContext.Provider>
